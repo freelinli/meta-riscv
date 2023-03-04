@@ -6,4 +6,5 @@ part u-boot --source rawcopy --sourceparams="file=u-boot.toc1" --offset 32800s -
 
 part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --align 4096 --fixed-size 64 --active
 
-part /     --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs  --align 4096 --fixed-size 14000 --exclude-path data/
+# fixed-size can add more size, it depends on your SD/EMMI device size. such as 1400/1024g
+part /     --source rootfs --ondisk mmcblk0 --fstype=ext4 --label rootfs  --align 4096 --fixed-size 1400 --exclude-path data/
